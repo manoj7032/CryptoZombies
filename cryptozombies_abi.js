@@ -37,6 +37,50 @@ var cryptoZombiesABI = [
         {
           "name": "_zombieId",
           "type": "uint256"
+        }
+      ],
+      "name": "levelDown",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_zombieId",
+          "type": "uint256"
+        },
+        {
+          "name": "_newName",
+          "type": "string"
+        }
+      ],
+      "name": "changeName",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        { "name": "_zombieId", "type": "uint256" },
+        { "name": "_targetId", "type": "uint256" }
+      ],
+      "name": "attack",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_zombieId",
+          "type": "uint256"
         },
         {
           "name": "_kittyId",
@@ -219,6 +263,7 @@ var cryptoZombiesABI = [
       "stateMutability": "nonpayable",
       "type": "function"
     },
+
     {
       "constant": true,
       "inputs": [],
@@ -232,6 +277,42 @@ var cryptoZombiesABI = [
       "payable": false,
       "stateMutability": "view",
       "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        { "name": "_zombieId1", "type": "uint256" },
+        { "name": "_zombieId2", "type": "uint256" }
+      ],
+      "name": "breedZombies",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+
+    {
+      "constant": false,
+      "inputs": [
+        { "name": "_zombieId", "type": "uint256" },
+        { "name": "_targetId", "type": "uint256" }
+      ],
+      "name": "attack",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        { "indexed": false, "name": "zombieId", "type": "uint256" },
+        { "indexed": false, "name": "name", "type": "string" },
+        { "indexed": false, "name": "winCount", "type": "uint16" },
+        { "indexed": false, "name": "lossCount", "type": "uint16" }
+      ],
+      "name": "LeaderboardUpdated",
+      "type": "event"
     },
     {
       "constant": false,
@@ -437,6 +518,32 @@ var cryptoZombiesABI = [
       ],
       "name": "OwnershipTransferred",
       "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_name",
+          "type": "string"
+        }
+      ],
+      "name": "createKitty",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        { "internalType": "uint256", "name": "kittyId", "type": "uint256" }
+      ],
+      "name": "getKitty",
+      "outputs": [
+        { "internalType": "string", "name": "name", "type": "string" },
+        { "internalType": "uint256", "name": "dna", "type": "uint256" }
+      ],
+      "stateMutability": "view",
+      "type": "function"
     }
+  
   ]
   

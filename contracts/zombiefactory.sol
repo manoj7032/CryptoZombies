@@ -13,7 +13,7 @@ contract ZombieFactory is Ownable {
 
   uint dnaDigits = 16;
   uint dnaModulus = 10 ** dnaDigits;
-  uint cooldownTime = 1 days;
+  uint cooldownTime = 1 minutes;
 
   struct Zombie {
     string name;
@@ -24,28 +24,42 @@ contract ZombieFactory is Ownable {
     uint16 lossCount;
   }
 
+
+
   Zombie[] public zombies;
 
   mapping (uint => address) public zombieToOwner;
   mapping (address => uint) ownerZombieCount;
+  mapping(bytes32 => bool) public existingZombieNames;
 
+
+    // Create a new zombie with unique name
   function _createZombie(string _name, uint _dna) internal {
-    uint id = zombies.push(Zombie(_name, _dna, 1, uint32(now + cooldownTime), 0, 0)) - 1;
-    zombieToOwner[id] = msg.sender;
-    ownerZombieCount[msg.sender] = ownerZombieCount[msg.sender].add(1);
-    emit NewZombie(id, _name, _dna);
+      bytes32 nameHash = keccak256(abi.encodePacked(_name));  // Hash the name to bytes32
+      require(!existingZombieNames[nameHash], "This name is already taken.");  // Check for duplicate names
+
+      uint id = zombies.push(Zombie(_name, _dna, 1, uint32(now + 1 days), 0, 0)) - 1;
+      zombieToOwner[id] = msg.sender;
+      ownerZombieCount[msg.sender]++;
+      existingZombieNames[nameHash] = true;  // Mark name as used
+
+      emit NewZombie(id, _name, _dna);
   }
 
+  // Generate random DNA
   function _generateRandomDna(string _str) private view returns (uint) {
-    uint rand = uint(keccak256(abi.encodePacked(_str)));
-    return rand % dnaModulus;
+      uint rand = uint(keccak256(abi.encodePacked(_str)));
+      return rand % dnaModulus;
   }
 
+  // Public function to create a zombie
   function createRandomZombie(string _name) public {
-    require(ownerZombieCount[msg.sender] == 0);
-    uint randDna = _generateRandomDna(_name);
-    randDna = randDna - randDna % 100;
-    _createZombie(_name, randDna);
+      bytes32 nameHash = keccak256(abi.encodePacked(_name));  // Hash the name to bytes32
+      require(!existingZombieNames[nameHash], "This name is already taken.");  // Check for duplicate names
+
+      uint dna = _generateRandomDna(_name);
+      _createZombie(_name, dna);
   }
+
 
 }

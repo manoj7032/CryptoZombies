@@ -50,9 +50,10 @@ contract ZombieFeeding is ZombieFactory {
     _triggerCooldown(myZombie);
   }
 
-  function feedOnKitty(uint _zombieId, uint _kittyId) public {
+function feedOnKitty(uint _zombieId, uint _kittyId) public onlyOwnerOf(_zombieId) {
     uint kittyDna;
     (,,,,,,,,,kittyDna) = kittyContract.getKitty(_kittyId);
-    feedAndMultiply(_zombieId, kittyDna, "kitty");
-  }
+    uint newDna = (zombies[_zombieId].dna + kittyDna) / 2;
+    _createZombie("KittyZombie", newDna);
+}
 }

@@ -6,6 +6,8 @@ import "./safemath.sol";
 
 contract ZombieOwnership is ZombieAttack, ERC721 {
 
+
+
   using SafeMath for uint256;
 
   mapping (uint => address) zombieApprovals;
