@@ -1,8 +1,8 @@
 # CryptoZombie DApp
 
-Advanced Blockchain Technology(CPSC 559) - Under Professor Wenlin Han at California State University-Fullerton
+## Advanced Blockchain Technology(CPSC 559) - Under Professor Wenlin Han at California State University-Fullerton
 
-Team Zombie Squad
+## Team Zombie Squad
 
 Venkata Abhinav Karthik Pulikonda
 CWID: 885210294
@@ -20,17 +20,17 @@ Rakesh Puppala
 CWID : 885175919
 Rakeshpuppala2591@csu.fullerton.edu
 
-Github Repo Link - https://github.com/manoj7032/CryptoZombies_Mid
+## Github Repo Link - https://github.com/manoj7032/CryptoZombies_Mid
 
 
-Project Overview
+### Project Overview
 
 The CryptoZombie DApp is an innovative decentralized application built on the Ethereum blockchain, designed to offer users an engaging and interactive experience in the world of zombie creation and management. 
 
 As part of our midterm project, the DApp combines elements of gaming, strategy, and blockchain technology, enabling users to create, customize, and battle their unique zombie creations.
 
 
-Improvements
+##Improvements
 
 Compared to the starter code, we made significant enhancements and added new features that improve the functionality, user experience, and design of the DApp:
 
@@ -86,7 +86,7 @@ Compared to the starter code, we made significant enhancements and added new fea
 
 
 
-Instructions to Set Up and Run
+## Instructions to Set Up and Run
 
 1. Clone the repository and navigate to the project directory.
 2. Compile the smart contracts using Truffle by running truffle compile in your terminal.
