@@ -52,7 +52,7 @@ Compared to the starter code, we made significant enhancements and added new fea
 
 4.	Zombie Attack Feature:
 
-Implemented an Attack Feature where users can select one of their zombies and a target zombie to attack. After the attack:
+  Implemented an Attack Feature where users can select one of their zombies and a target zombie to attack. After the attack:
 •	If the selected zombie wins, a child zombie is created with the name starting with “child -” using the DNA of both the selected and targeted zombies, and the win/loss counts are updated accordingly.
 •	If the targeted zombie wins, no new zombie will be created, maintaining the balance of the game.
 •	This interactive feature makes the DApp more dynamic, allowing users to engage in battles, which was not included in the starter code.
@@ -88,15 +88,15 @@ Implemented an Attack Feature where users can select one of their zombies and a 
 
 Instructions to Set Up and Run
 
-	Clone the repository and navigate to the project directory.
-	Compile the smart contracts using Truffle by running truffle compile in your terminal.
-	Deploy the smart contracts on your local blockchain (e.g., using Ganache) by running truffle migrate.
-	After deploying the contracts, update the ownership addresses for both the zombie and kitty contracts in the index.html file:
-	Replace the placeholder contract addresses in the code with the correct ones from your Ganache deployment.
-	Start a local development server:
-	Run truffle develop or npm run start to start the server.
-	Once the server starts, use the address provided by the terminal (e.g., localhost:3000) to open the DApp in your browser.
-	Ensure that MetaMask is installed and connected to your local blockchain.
+1. Clone the repository and navigate to the project directory.
+2. Compile the smart contracts using Truffle by running truffle compile in your terminal.
+3. Deploy the smart contracts on your local blockchain (e.g., using Ganache) by running truffle migrate.
+4. After deploying the contracts, update the ownership addresses for both the zombie and kitty contracts in the index.html file:
+5. Replace the placeholder contract addresses in the code with the correct ones from your Ganache deployment.
+6. Start a local development server:
+7. Run truffle develop or npm run start to start the server.
+8. Once the server starts, use the address provided by the terminal (e.g., localhost:3000) to open the DApp in your browser.
+9. Ensure that MetaMask is installed and connected to your local blockchain.
 
 
 Use the provided buttons to interact with the zombies and kitties. Features include:
