@@ -30,7 +30,7 @@ The CryptoZombie DApp is an innovative decentralized application built on the Et
 As part of our midterm project, the DApp combines elements of gaming, strategy, and blockchain technology, enabling users to create, customize, and battle their unique zombie creations.
 
 
-##Improvements
+## Improvements
 
 Compared to the starter code, we made significant enhancements and added new features that improve the functionality, user experience, and design of the DApp:
 
